@@ -1,16 +1,57 @@
-# React + Vite
+# 📝 React To-Do Dashboard with JWT Authentication
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, persistent To-Do application built with React and Tailwind CSS. This project demonstrates advanced frontend security concepts, including JSON Web Token (JWT) session management, protected routing, and local data persistence.
 
-Currently, two official plugins are available:
+## ✨ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **🔐 JWT Authentication:** Features a simulated backend login that generates a JWT, decodes user payloads, and actively monitors token expiration (`exp`) in real-time.
+* **🛡️ Protected Routes:** Utilizes React Router to guard the dashboard. Unauthenticated users are bounced to the login page, while currently logged-in users are automatically redirected away from the login screen.
+* **💾 Data Persistence:** Uses lazy-loaded React state and `useEffect` hooks to securely save tasks and active session tokens inside the browser's `localStorage`.
+* **✨ Modern UI:** Styled exclusively with Tailwind CSS, featuring glassmorphism cards, dynamic gradient headers, and interactive hover states.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Framework:** React (via Vite)
+* **Styling:** Tailwind CSS (v3)
+* **Routing:** React Router v6
+* **Utilities:** `jwt-decode`
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/yourusername/todo-auth-app.git](https://github.com/yourusername/todo-auth-app.git)
+   ```
+
+2. **Navigate into the project directory:**
+   ```bash
+   cd todo-auth-app
+   ```
+
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+### 🧪 How to Test
+
+Because this project uses a simulated frontend authentication system for demonstration purposes, you must use the following hardcoded credentials to log in:
+
+* **Email:** `user@test.com`
+* **Password:** `myReactTestPass99!`
+
+#### Things to try:
+1. Add some tasks and hit refresh. Notice how they persist via `localStorage`.
+2. Copy the URL (http://localhost:5173/), open an Incognito window, and paste it. Notice how the Bouncer instantly kicks you to `/login`.
